@@ -92,9 +92,15 @@ def contain(command, image_name, image_dir, container_id, container_dir):
     )
 )
 @click.option("--image-name", "-i", help="Image name", default="ubuntu")
-@click.option("--image-dir", help="Images directory", default="/workshop/images")
 @click.option(
-    "--container-dir", help="Containers directory", default="/workshop/containers"
+    "--image-dir",
+    help="Images directory",
+    default="~/rubber-docker/levels/01_chroot_image/images",
+)
+@click.option(
+    "--container-dir",
+    help="Containers directory",
+    default="~/rubber-docker/levels/01_chroot_image/containers",
 )
 @click.argument("Command", required=True, nargs=-1)
 def run(image_name, image_dir, container_dir, command):
